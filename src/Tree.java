@@ -41,4 +41,15 @@ public class Tree {
             }
         }
     }
+
+    public No buscar(long chave) {
+        if (raiz == null) return null; // se arvore vazia
+        No atual = raiz;  // começa a procurar desde raiz
+        while (atual.item != chave) { // enquanto nao encontrou
+            if(chave < atual.item ) atual = atual.noEsquerda; // caminha para esquerda
+            else atual = atual.noDireita; // caminha para direita
+            if (atual == null) return null; // encontrou uma folha -> sai
+        } // fim laço while
+        return atual; // terminou o laço while e chegou aqui é pq encontrou item
+    }
 }
