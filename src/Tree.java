@@ -12,14 +12,14 @@ public class Tree {
     //Assim como criamos o item no No do tipo long, pois utilizaremos ele
     public void Inserir(long v) {
         No novo = new No();//Instanciando um nobo NO
-//        novo.item = v; //definindo um item de acordo com o parâmetro recebido
-//        novo.noDireita = null;
-//        novo.noEsquerda = null;
+        novo.item = v; //definindo um item de acordo com o parâmetro recebido
+        novo.noDireita = null;
+        novo.noEsquerda = null;
 
         //verificando se a raiz é nula para poder criar a árvore
         //caso seja, inserimos o objeto instaciado
-        if (raiz == null) {
-            raiz = novo;
+        if (this.raiz == null) {
+            this.raiz = novo;
         }
             //caso não seja a raiz
         else {
@@ -58,11 +58,11 @@ public class Tree {
     }
 
 
-    public void percorrerEmOrdem(No no) {
-        if (no != null) {
-            percorrerEmOrdem(no.noEsquerda);
-            System.out.println(no.item + " ");
-            percorrerEmOrdem(no.noDireita);
+    public void percorrerEmOrdem(No novo) {
+        if (novo != null) {
+            percorrerEmOrdem(novo.getNoEsquerda());
+            System.out.println(novo.item + " ");
+            percorrerEmOrdem(novo.getNoEsquerda());
         }
     }
 
